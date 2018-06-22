@@ -21,11 +21,8 @@ const routes: Routes = [
   { path: 'logout', component: LogoutComponent },
   { path: 'account', component: AccountComponent, canActivate: [AuthGuardLogin] },
   { path: 'admin', component: AdminComponent, canActivate: [AuthGuardAdmin] },
-  { path: 'team', component: TeamComponent,
-    children: [
-      { path: 'players/list', component: CreateTeamComponent }
-    ]
-  },
+  { path: 'team', component: TeamComponent},
+  { path: 'team/create', component: CreateTeamComponent },
   { path: 'notfound', component: NotFoundComponent },
   { path: '**', redirectTo: '/notfound' },
 ];
