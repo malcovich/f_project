@@ -1,10 +1,11 @@
-<div class="row">
+<app-loading [condition]="isLoading"></app-loading>
+<div class="row" *ngIf="!isLoading">
   <div class="col g-ml-50 g-ml-0--lg g-overflow-hidden">
       <div class="g-pa-20">
         <h1 class="g-font-weight-300 g-font-size-28 g-color-black g-mb-30">Команда</h1>
       </div>
     <div class="g-mb-40">
-      <div class="table-responsive">
+      <div class="table-responsive" *ngIf="team.players.length">
         <table class="js-datatable table table-striped u-table--v3 u-editable-table--v1 g-color-black" data-dt-info="#datatableInfo2"
           data-dt-search="#datatableSearch2" data-dt-entries="#datatableEntries2" data-dt-pagination="datatablePagination2"
           data-dt-page-length="5" data-dt-is-responsive="false" data-dt-pagination-classes="list-inline text-right mb-0" data-dt-pagination-items-classes="list-inline-item g-hidden-sm-down"
@@ -156,6 +157,7 @@
           </tbody>
         </table>
       </div>
+      <div *ngIf="!team.players.length">Create team</div>
     </div>
   </div>
 </div>

@@ -9,7 +9,8 @@ import { AccountComponent } from './account/account.component';
 import { AdminComponent } from './admin/admin.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { TeamComponent } from './team/details/team.component';
-import { CreateTeamComponent } from './team/create/create.component'
+import { CreateTeamComponent } from './team/create/create.component';
+import { SearchComponent } from './search/search.component';
 
 import { AuthGuardLogin } from './services/auth-guard-login.service';
 import { AuthGuardAdmin } from './services/auth-guard-admin.service';
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'account', component: AccountComponent, canActivate: [AuthGuardLogin] },
   { path: 'admin', component: AdminComponent, canActivate: [AuthGuardAdmin] },
   { path: 'team', component: TeamComponent},
+  { path: 'search', component: SearchComponent},
   { path: 'team/create', component: CreateTeamComponent },
   { path: 'notfound', component: NotFoundComponent },
   { path: '**', redirectTo: '/notfound' },
