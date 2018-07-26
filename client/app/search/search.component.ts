@@ -8,7 +8,6 @@ import { SearchService } from "../services/search.service";
 })
 export class SearchComponent implements OnInit{
   form: FormGroup;
-  FIRSTWORDS = [{value: "Кто"}, {value: "Сколько"}];
   isLoading = true;
   player: any;
 

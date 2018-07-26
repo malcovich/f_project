@@ -2,6 +2,7 @@ import Team from '../models/player';
 
 export default class SearchCtrl {
   model = Team;
+  FIRST_WORDS = [{value: "Кто"}, {value: "Сколько"}];
 
   getAnswer = (req, res) => {
       console.log("==========",req.body.query)
@@ -13,9 +14,6 @@ export default class SearchCtrl {
           }
       }
       res.status(200).json(player)
-    // this.model.findOne({query: req.body.query }, (err, team) => {
-    //     res.status(200).json({players: []});
-    // });
   }
 
 }
