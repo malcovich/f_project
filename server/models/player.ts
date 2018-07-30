@@ -1,5 +1,4 @@
 import * as mongoose from 'mongoose';
-import Club from './clubs';
 
 const playerSchema = new mongoose.Schema({
   name: String,

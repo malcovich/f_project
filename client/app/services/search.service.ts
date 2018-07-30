@@ -10,7 +10,6 @@ export class SearchService {
   constructor(private http: HttpClient) { }
 
   getAnswer(query): Observable<any> {
-      console.log('sdfsdf');
     return this.http.post('/api/search', {query: query});
   }
 

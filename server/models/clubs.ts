@@ -1,5 +1,4 @@
 import * as mongoose from 'mongoose';
-import League from './league';
 
 const clubSchema = new mongoose.Schema({
   name: String,
