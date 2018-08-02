@@ -1,4 +1,5 @@
 import * as mongoose from 'mongoose';
+import Club from 'models/clubs';
 
 const playerSchema = new mongoose.Schema({
   name: String,
@@ -15,7 +16,6 @@ const playerSchema = new mongoose.Schema({
   slug: String,
   club: {type: mongoose.Schema.Types.ObjectId, ref: 'Club'},
 });
-
 const Player = mongoose.model('Player', playerSchema);
 
 export default Player;

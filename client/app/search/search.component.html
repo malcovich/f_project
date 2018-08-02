@@ -5,7 +5,42 @@
         <i class="hs-admin-search"></i>
     </button>
 </div>
-<b>Кто забил гол</b>
-{{form.get('searchQ').value}}
+<b>Кто забил гол</b><br>
+<b>Кто забил гол Черноморцу</b>
+<div class="row justify-content-center">
+    <div class="col-lg-8 col-centered">
+        <div class="row">
+        <div class="col-md-6 col-lg-4 g-mb-30" *ngFor="let action of actions">
+            <!-- Article -->
+            <article>
+                <!-- Article Image -->
+                <img class="w-100" src="{{'../assets/img/'+action.player.slug+'.jpg'}}" alt="Image Description">
+                <!-- End Article Image -->
 
-{{player?.name}}
+                <!-- Article Content -->
+                <div class="u-shadow-v24 g-pa-30">
+                    <div class="g-mb-30">
+                        <h3 class="h4 g-color-black g-font-weight-600 mb-3">
+                            <a class="g-color-main g-color-primary--hover g-text-underline--none--hover" href="#!">{{action.player.name}}, {{action.player.shirtNumber}}</a>
+                        </h3>
+                        <p>{{returnProstion(action.player)}}, {{action.player.club.ukrName}}</p>
+                    </div>
+
+                    <div class="d-flex justify-content-start">
+                        <div class="align-self-center g-width-70 g-mr-15  justify-content-center">
+                            <!-- Chart Pie -->
+                            <span class="counter">1 </span> <span class="g-color-black g-font-weight-700">Автогол</span>
+                            <!-- End Chart Pie -->
+                        </div>
+                        <div class="d-block align-self-center ml-auto">
+                            <a class="btn btn-md u-btn-primary g-font-weight-600 g-font-size-11 text-uppercase" href="#!">Donate</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Article Content -->
+            </article>
+            <!-- End Article -->
+        </div>
+        </div>
+    </div>
+</div>

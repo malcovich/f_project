@@ -1,10 +1,11 @@
 import * as mongoose from 'mongoose';
+import Player from '../models/player'
+import Match from '../models/match';
 
 const actionSchema = new mongoose.Schema({
   type: String,
-  club: {type: mongoose.Schema.Types.ObjectId, ref: 'Club'},
   player: {type: mongoose.Schema.Types.ObjectId, ref: 'Player'},
-  match: {type: mongoose.Schema.Types.ObjectId, ref: 'Game'},
+  match: {type: mongoose.Schema.Types.ObjectId, ref: 'Match'},
   minutes: Number
 });
 

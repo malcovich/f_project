@@ -9,7 +9,7 @@ import { SearchService } from "../services/search.service";
 export class SearchComponent implements OnInit{
   form: FormGroup;
   isLoading = true;
-  player: any;
+  actions: any;
 
   constructor(private teamService: SearchService) { }
 
@@ -27,7 +27,8 @@ export class SearchComponent implements OnInit{
     if(event.keyCode == 13) {
       this.teamService.getAnswer(this.form.get('searchQ').value).subscribe(
         data => {
-          this.player = data;
+          console.log(data)
+          this.actions= data;
         },
         error => console.log(error),
         () => this.isLoading = false
@@ -37,6 +38,21 @@ export class SearchComponent implements OnInit{
 
   preparingString() {
     let words = this.form.get('searchQ').value.split(' ');
+  }
+
+  returnProstion(player) {
+    if (player.position === 'D') {
+      return "Захисник"
+    }
+    if (player.position === 'G') {
+      return "Голкіпер"
+    }
+    if (player.position === 'M') {
+      return "Півзахисник"
+    }
+    if (player.position === 'F') {
+      return "Форвард"
+    }
   }
 
 }

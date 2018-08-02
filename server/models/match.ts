@@ -1,6 +1,6 @@
 import * as mongoose from 'mongoose';
 
-const gameSchema = new mongoose.Schema({
+const matchSchema = new mongoose.Schema({
   tour: String,
   homeT: {type: mongoose.Schema.Types.ObjectId, ref: 'Club'},
   awayT: {type: mongoose.Schema.Types.ObjectId, ref: 'Club'},
@@ -9,6 +9,6 @@ const gameSchema = new mongoose.Schema({
   date: Date
 });
 
-const Game = mongoose.model('Game', gameSchema);
+const Match = mongoose.model('Match', matchSchema);
 
-export default Game;
+export default Match;
