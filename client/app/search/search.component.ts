@@ -19,7 +19,7 @@ export class SearchComponent implements OnInit{
 
   initForm(){
     this.form = new FormGroup({
-      searchQ: new FormControl("")
+      searchQ: new FormControl("Кто забил гол Черноморцу")
     });
   }
 
